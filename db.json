@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "email": "ashutoshkalia@bcoder.in",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "email": "bcoder@gmail.com",
+      "password": "123",
+      "id": 3
+    }
+  ]
+}
