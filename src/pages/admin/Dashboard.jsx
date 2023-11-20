@@ -1,5 +1,5 @@
 import React from 'react'
-import Sidebar from '../../components/sheared/Sidebar';
+import WithDashboardLayout from '../../hoc/WithDashboardLayout';
 
 const Dashboard = () => {
   return (
@@ -7,9 +7,8 @@ const Dashboard = () => {
       <div>
         Dashboard
       </div>
-      <Sidebar />
     </>
   )
 }
 
-export default Dashboard;
+export default WithDashboardLayout(Dashboard);

@@ -1,5 +1,6 @@
 import React from 'react'
 import Sidebar from '../../components/sheared/Sidebar';
+import WithDashboardLayout from '../../hoc/WithDashboardLayout';
 
 const Clients = () => {
   return (
@@ -7,9 +8,8 @@ const Clients = () => {
       <div>
         clients
       </div>
-      <Sidebar />
     </>
   )
 };
 
-export default Clients;
+export default WithDashboardLayout(Clients);

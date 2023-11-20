@@ -11,18 +11,18 @@ const Sidebar = () => {
         {
             title: 'Clients', to: '/admin/clients'
         },
-        // {
-        //     title: 'Service Providers', src: "", to: '/admin/dashboard'
-        // },
-        // {
-        //     title: 'Review', src: "", to: '/admin/dashboard'
-        // },
-        // {
-        //     title: 'Support Tickets', src: "", to: '/admin/dashboard'
-        // },
-        // {
-        //     title: 'Search List', src: "", to: '/admin/dashboard'
-        // }
+        {
+            title: 'Service Providers', src: "", to: '/admin/Service-provider'
+        },
+        {
+            title: 'Review', src: "", to: '/admin/Review'
+        },
+        {
+            title: 'Search List', src: "", to: '/admin/Search-List'
+        },
+        {
+            title: 'Support Ticket', src: "", to: '/admin/Support-ticket'
+        }
     ]
     return (
         <>
@@ -32,7 +32,7 @@ const Sidebar = () => {
                 </div>
                 {menu.map((links, index) => (
                     <li key={index} className="list-none">
-                        <NavLink to={links.to}>
+                        <NavLink to={links.to} className={({ isActive }) => `side-menu__item ${isActive && 'active'} whitespace-nowrap`}>
                             {/* <img src="" alt="" /> */}
                             <p>
                                 {links.title}

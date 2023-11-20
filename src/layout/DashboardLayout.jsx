@@ -1,0 +1,24 @@
+import React from 'react'
+import Sidebar from '../components/sheared/Sidebar'
+import { useGlobalContext } from '../context/GlobalProviders'
+
+const DashboardLayout = ({ children }) => {
+    const { sidebarOpen } = useGlobalContext();
+    return (
+        <section className='h-full w-full flex bg-primary-300'>
+            <div className='flex flex-col min-h-screen fixed left-0 h-full z-30'>
+                {/* <div className='flex flex-col min-h-screen'> */}
+                <Sidebar />
+            </div>
+            <div className={`flex flex-1 flex-col test ml-52`}>
+                {/* <div className='flex flex-1 flex-col'> */}
+                {/* <Header /> */}
+                <div className='flex-1 overscroll-y-auto'>
+                    {children}
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default DashboardLayout;

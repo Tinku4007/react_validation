@@ -6,6 +6,10 @@ import { getLocalStorage } from '../utils/LocalStorageUtills';
 import AuthProteced from './AuthProteced';
 import AdminProtected from './AdminProtected';
 import Clients from '../pages/admin/Clients';
+import Review from '../pages/admin/Review';
+import ServiceProvider from '../pages/admin/ServiceProvider';
+import SearchList from '../pages/admin/SearchList';
+import SupportTicket from '../pages/admin/SupportTicket';
 
 const Root = () => {
     const navigate = useNavigate();
@@ -32,6 +36,10 @@ const Routing = () => {
                 <Route path='/admin' element={<AdminProtected />}>
                     <Route path='dashboard' element={<Dashboard />} />
                     <Route path='clients' element={<Clients />} />
+                    <Route path='Review' element={<Review />} />
+                    <Route path='Search-List' element={<SearchList />} />
+                    <Route path='Service-provider' element={<ServiceProvider/>} />
+                    <Route path='Support-ticket' element={<SupportTicket />} />
                 </Route>
             </Routes>
         </Router>
