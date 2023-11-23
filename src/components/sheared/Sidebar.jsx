@@ -26,15 +26,17 @@ const Sidebar = () => {
     ]
     return (
         <>
-            <div className="bg-[#fce0e3] w-[208px] h-screen">
+            <div className="bg-[#fce0e3] w-[208px] h-screen pl-4">
                 <div className="logo">
-                    <img className="w-20" src={logo} alt="" />
+                    <img className="w-20 mx-auto" src={logo} alt="" />
                 </div>
                 {menu.map((links, index) => (
                     <li key={index} className="list-none">
-                        <NavLink to={links.to} className={({ isActive }) => `side-menu__item ${isActive && 'active'} whitespace-nowrap`}>
+                        <NavLink to={links.to}>
+                            {/* <span className='shape1' />
+                            <span className='shape2' /> */}
                             {/* <img src="" alt="" /> */}
-                            <p>
+                            <p className="m-2 mr-0 py-3 px-3 rounded-s-full">
                                 {links.title}
                             </p>
                         </NavLink>

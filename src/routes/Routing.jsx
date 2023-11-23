@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import Dashboard from '../pages/admin/Dashboard'
+import Dashboard from '../pages/admin/dashboard/Dashboard'
 import Login from '../pages/auth/Login';
 import { getLocalStorage } from '../utils/LocalStorageUtills';
 import AuthProteced from './AuthProteced';
