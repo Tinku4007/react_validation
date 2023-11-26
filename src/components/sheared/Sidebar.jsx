@@ -1,9 +1,11 @@
 import { Link, NavLink } from "react-router-dom"
 import logo from '../../assets/logo.png'
 import { useGlobalContext } from "../../context/GlobalProviders"
-const Sidebar = () => {
-    // const { sidebarOpen, setSidebarOpen } = useGlobalContext();
+import { useStore } from "../../store/Store";
 
+
+const Sidebar = () => {
+    const {sidebarService , toggle} = useStore()
     const menu = [
         {
             title: 'Dashboard', to: '/admin/dashboard'
@@ -26,7 +28,10 @@ const Sidebar = () => {
     ]
     return (
         <>
-            <div className="bg-[#fce0e3] w-[208px] h-screen pl-4">
+            <div className={`${sidebarService ? 'w-[100px]' : 'w-[208px]' } bg-[#fce0e3] relative h-screen pl-4`}>
+        <div className="" onClick={toggle}>
+            click me
+        </div>
                 <div className="logo">
                     <img className="w-20 mx-auto" src={logo} alt="" />
                 </div>

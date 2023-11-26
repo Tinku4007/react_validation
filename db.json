@@ -9,6 +9,99 @@
       "email": "bcoder@gmail.com",
       "password": "123",
       "id": 3
+    },
+    {
+      "email": "bcoder@gmail.com",
+      "password": "123",
+      "id": 4
+    }
+  ],
+  "Client": [
+    {
+      "id": 1,
+      "name": "Tinku",
+      "email": "tinku@gmail.com",
+      "review": "4",
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "name": "rahul",
+      "email": "tinku@gmail.com",
+      "review": "4",
+      "status": "Active"
+    },
+    {
+      "id": 3,
+      "name": "dinesh",
+      "email": "tinku@gmail.com",
+      "review": "4",
+      "status": "Active"
+    },
+    {
+      "id": 4,
+      "name": "rohan",
+      "email": "tinku@gmail.com",
+      "review": "4",
+      "status": "Active"
+    },
+    {
+      "id": 5,
+      "name": "sonam",
+      "email": "tinku@gmail.com",
+      "review": "4",
+      "status": "Active"
+    },
+    {
+      "id": 6,
+      "name": "Tinku",
+      "email": "tinku@gmail.com",
+      "review": "4",
+      "status": "Active"
+    }
+  ],
+  "serviceProvider": [
+    {
+      "id": 1,
+      "name": "Tinku",
+      "email": "tinku@gmail.com",
+      "review": "4",
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "name": "rahul",
+      "email": "tinku@gmail.com",
+      "review": "4",
+      "status": "Active"
+    },
+    {
+      "id": 3,
+      "name": "dinesh",
+      "email": "tinku@gmail.com",
+      "review": "4",
+      "status": "Active"
+    },
+    {
+      "id": 4,
+      "name": "rohan",
+      "email": "tinku@gmail.com",
+      "review": "4",
+      "status": "Active"
+    },
+    {
+      "id": 5,
+      "name": "sonam",
+      "email": "tinku@gmail.com",
+      "review": "4",
+      "status": "Active"
+    },
+    {
+      "id": 6,
+      "name": "Tinku",
+      "email": "tinku@gmail.com",
+      "review": "4",
+      "status": "Active"
     }
   ]
 }

@@ -8,3 +8,22 @@ export const LoginAdmin = async (payload) => {
         return error.response
     }
 };
+
+
+export const ClientAdmin = async () => {
+    try {
+        const response = await axiosInstance.get("/Client")
+        return response
+    } catch (error) {
+        return error.response
+    }
+}
+
+export const ServiceProviderAdmin = async () => {
+    try {
+        const response = await axiosInstance.get("/serviceProvider")
+        return response.data
+    } catch (error) {
+        return error.response
+    }
+}

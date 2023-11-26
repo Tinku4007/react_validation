@@ -4,7 +4,6 @@ import { useGlobalContext } from '../context/GlobalProviders'
 import Header from '../components/sheared/Header';
 
 const DashboardLayout = ({ children }) => {
-    const { sidebarOpen } = useGlobalContext();
     return (
         <section className='h-full h-screen w-full flex bg-[#fafafa]'>
             <div className='flex flex-col min-h-screen fixed left-0 h-full z-30 bg-[#fafafa]'>
