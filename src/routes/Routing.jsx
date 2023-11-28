@@ -7,9 +7,9 @@ import AuthProteced from './AuthProteced';
 import AdminProtected from './AdminProtected';
 import Clients from '../pages/admin/Clients';
 import Review from '../pages/admin/Review';
-import ServiceProvider from '../pages/admin/ServiceProvider';
 import SearchList from '../pages/admin/SearchList';
 import SupportTicket from '../pages/admin/SupportTicket';
+import ServiceProvider from '../pages/admin/serviceProvider/ServiceProvider';
 
 const Root = () => {
     const navigate = useNavigate();
