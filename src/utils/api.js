@@ -27,3 +27,30 @@ export const ServiceProviderAdmin = async () => {
         return error.response
     }
 }
+
+export const RequstedAdminApi = async () => {
+    try {
+        const response = await axiosInstance.get("/requsted")
+        return response.data
+    } catch (error) {
+        return error.response
+    }
+}
+
+export const supportTicketAdminApi = async () => {
+    try {
+        const response = await axiosInstance.get('/supportTicket')
+        return response.data
+    } catch (error) {
+        return error.response
+    }
+}
+
+export const SearchListAdminApi = async () => {
+    try {
+        const response = await axiosInstance.get('/searchList')
+        return response.data
+    } catch (error) {
+        return error.responseF
+    }
+}

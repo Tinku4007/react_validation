@@ -2,3 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+.active .link-nav{
+    font-weight: 600;
+    color: #61373f;
+}
+
+.side-menu__item.active:before {
+    border-bottom: transparent;
+    border-left-color: transparent;
+    border-radius: 0 0 48px 0;
+    border-right: 20px solid #fce0e3;
+    border-top-color: transparent;
+    bottom: 0;
+    content: "";
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: -30px;
+    z-index: 9;
+}
+
+.side-menu__item.active:after {
+    border-bottom: transparent;
+    border-left-color: transparent;
+    border-radius: 0 48px 0 0;
+    border-right: 20px solid #fce0e3;
+    border-top-color: transparent;
+    bottom: 0;
+    content: "";
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 48px;
+    z-index: 0;
+}
+
+.side-menu__item.active .shape1, .side-menu__item.active .shape2 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(250 250 250);
+    position: absolute;
+    right: 0;
+    width: 18px;
+}
+
+.side-menu__item.active .shape1 {
+    height: 31px;
+    top: -30px;
+}
+
+.side-menu__item.active .shape2 {
+    height: 30px;
+    top: 40px;
+}

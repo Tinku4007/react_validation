@@ -4,11 +4,14 @@ import WithDashboardLayout from '../../hoc/WithDashboardLayout';
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import { ClientAdmin } from '../../utils/api';
 import { useState } from 'react';
+import { CiSearch } from 'react-icons/ci';
+import deleteicon from '../../assets/delete.png'
+import arrowicon from '../../assets/arrow.png'
 
 const Clients = () => {
   const [clientData, setClientDats] = useState([])
   useEffect(() => {
-    fetchclient()
+    fetchclient();
   }, [])
 
   const fetchclient = async () => {
@@ -16,12 +19,24 @@ const Clients = () => {
       const response = await ClientAdmin()
       // if (response) {
       setClientDats(response.data)
-      console.log(clientData, 'dddddd')
       // }
     } catch (error) {
       console.log(error, 'client fatching data')
     }
   }
+
+  const handleSearch = (event) => {
+    const searchData = event.target.value.toLowerCase();
+    console.log(searchData)
+    if (searchData === '') {
+      fetchclient()
+    } else {
+      const filteredClients = clientData.filter((client) => (
+        client.name.toLowerCase().includes(searchData)
+      ));
+      setClientDats(filteredClients);
+    }
+  };
   return (
     <>
       <div className='w-[95%] mx-auto'>
@@ -29,8 +44,11 @@ const Clients = () => {
           Clients
         </div>
         <div className='w-full min-h-[calc(100vh-110px)] flex flex-col gap-y-5 box-shadow rounded-t-2xl p-5 bg-white'>
-          <div className=''>
-            search input
+          <div className='flex items-center p-[3px] outline-none border border-[#ccc] rounded-lg w-60 h-10 '>
+            <input onInput={handleSearch} className='w-full outline-none h-full pl-3 placeholder:text-sm' placeholder='Search...' type="search" />
+            <div className='bg-[#633a42] w-[40px] h-full rounded-md flex items-center justify-center'>
+              <CiSearch className='fill-white' />
+            </div>
           </div>
           <div>
             <Table>
@@ -53,7 +71,11 @@ const Clients = () => {
                       <TableCell component='td'>{item.email}</TableCell>
                       <TableCell component='td'>{item.review}</TableCell>
                       <TableCell component='td'>{item.status}</TableCell>
-                      <TableCell component='td'>Delete</TableCell>
+                      <TableCell component='td'>
+                        <div className='flex items-center gap-2'>
+                        <img className='w-4' src={deleteicon} alt="delete icon" />
+                        </div>
+                      </TableCell>
                     </TableRow>
                   )
                 })}

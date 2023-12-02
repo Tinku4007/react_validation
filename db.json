@@ -48,7 +48,7 @@
     {
       "id": 5,
       "name": "sonam",
-      "email": "tinku@gmail.com",
+      "email": "sonam@gmail.com",
       "review": "4",
       "status": "Active"
     },
@@ -63,45 +63,160 @@
   "serviceProvider": [
     {
       "id": 1,
-      "name": "Tinku",
-      "email": "tinku@gmail.com",
-      "review": "4",
+      "BusinessName": "New business provide",
+      "name": "newone",
+      "Location": "Panchkula, Haryana, India",
+      "TotalBookNowClicks": "1",
+      "ProfileView": "6",
       "status": "Active"
     },
     {
       "id": 2,
-      "name": "rahul",
-      "email": "tinku@gmail.com",
-      "review": "4",
+      "BusinessName": "New business provide",
+      "name": "newone",
+      "Location": "Panchkula, Haryana, India",
+      "TotalBookNowClicks": "1",
+      "ProfileView": "6",
       "status": "Active"
     },
     {
       "id": 3,
-      "name": "dinesh",
-      "email": "tinku@gmail.com",
-      "review": "4",
+      "BusinessName": "New business provide",
+      "name": "newone",
+      "Location": "Panchkula, Haryana, India",
+      "TotalBookNowClicks": "1",
+      "ProfileView": "6",
       "status": "Active"
     },
     {
       "id": 4,
-      "name": "rohan",
-      "email": "tinku@gmail.com",
-      "review": "4",
+      "BusinessName": "New business provide",
+      "name": "newone",
+      "Location": "Panchkula, Haryana, India",
+      "TotalBookNowClicks": "1",
+      "ProfileView": "6",
       "status": "Active"
     },
     {
       "id": 5,
-      "name": "sonam",
-      "email": "tinku@gmail.com",
-      "review": "4",
+      "BusinessName": "New business provide",
+      "name": "newone",
+      "Location": "Panchkula, Haryana, India",
+      "TotalBookNowClicks": "1",
+      "ProfileView": "6",
       "status": "Active"
     },
     {
       "id": 6,
-      "name": "Tinku",
-      "email": "tinku@gmail.com",
-      "review": "4",
+      "BusinessName": "New business provide",
+      "name": "newone",
+      "Location": "Panchkula, Haryana, India",
+      "TotalBookNowClicks": "1",
+      "ProfileView": "6",
       "status": "Active"
+    },
+    {
+      "id": 7,
+      "BusinessName": "New business provide",
+      "name": "newone",
+      "Location": "Panchkula, Haryana, India",
+      "TotalBookNowClicks": "1",
+      "ProfileView": "6",
+      "status": "Active"
+    }
+  ],
+  "requsted": [
+    {
+      "id": 1,
+      "BusinessName": "New business provide",
+      "name": "newone",
+      "Location": "Panchkula, Haryana, India",
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "BusinessName": "New business provide",
+      "name": "newone",
+      "Location": "Panchkula, Haryana, India",
+      "status": "Active"
+    },
+    {
+      "id": 3,
+      "BusinessName": "New business provide",
+      "name": "newone",
+      "Location": "Panchkula, Haryana, India",
+      "status": "Active"
+    },
+    {
+      "id": 4,
+      "BusinessName": "New business provide",
+      "name": "newone",
+      "Location": "Panchkula, Haryana, India",
+      "status": "Active"
+    }
+  ],
+  "supportTicket": [
+    {
+      "Ticketid": 1,
+      "Username": "tinku@yopmail.com",
+      "Date": "01 Dec 2023, 2:41pm",
+      "Subject": "Helllokko",
+      "LastUpdateOn": "01 Dec 2023, 2:41pm",
+      "status": "Open",
+      "Action": "Delete"
+    },
+    {
+      "Ticketid": 2,
+      "Username": "Rohit@yopmail.com",
+      "Date": "01 Dec 2023, 2:41pm",
+      "Subject": "Helllokko",
+      "LastUpdateOn": "01 Dec 2023, 2:41pm",
+      "status": "Open",
+      "Action": "Delete"
+    },
+    {
+      "Ticketid": 3,
+      "Username": "sonam@yopmail.com",
+      "Date": "01 Dec 2023, 2:41pm",
+      "Subject": "Helllokko",
+      "LastUpdateOn": "01 Dec 2023, 2:41pm",
+      "status": "Open",
+      "Action": "Delete"
+    },
+    {
+      "Ticketid": 4,
+      "Username": "rishab@yopmail.com",
+      "Date": "01 Dec 2023, 2:41pm",
+      "Subject": "Helllokko",
+      "LastUpdateOn": "01 Dec 2023, 2:41pm",
+      "status": "Open",
+      "Action": "Delete"
+    }
+  ],
+  "searchList":[
+    {
+      "id" : 1,
+      "SearchKeywords" :"Nails near me",
+      "Clientname": "Johnsmith@gmail.com",
+      "dateTime":"26 Dec 2023 , 9:000pm"
+    },
+    {
+      "id" : 2,
+      "SearchKeywords" :"Nails near me",
+      "Clientname": "sonam@gmail.com",
+      "dateTime":"26 Dec 2023 , 9:000pm"
+    },
+    {
+      "id" : 3,
+      "SearchKeywords" :"Nails near me",
+      "Clientname": "rohit@gmail.com",
+      "dateTime":"26 Dec 2023 , 9:000pm"
+    },
+    {
+      "id" : 4,
+      "SearchKeywords" :"Nails near me",
+      "Clientname": "tinku@gmail.com",
+      "dateTime":"26 Dec 2023 , 9:000pm"
     }
   ]
 }
