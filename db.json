@@ -175,30 +175,30 @@
       "Action": "Delete"
     }
   ],
-  "searchList":[
+  "searchList": [
     {
-      "id" : 1,
-      "SearchKeywords" :"Nails near me",
+      "id": 1,
+      "SearchKeywords": "Nails near me",
       "Clientname": "Johnsmith@gmail.com",
-      "dateTime":"26 Dec 2023 , 9:000pm"
+      "dateTime": "26 Dec 2023 , 9:000pm"
     },
     {
-      "id" : 2,
-      "SearchKeywords" :"Nails near me",
+      "id": 2,
+      "SearchKeywords": "Nails near me",
       "Clientname": "sonam@gmail.com",
-      "dateTime":"26 Dec 2023 , 9:000pm"
+      "dateTime": "26 Dec 2023 , 9:000pm"
     },
     {
-      "id" : 3,
-      "SearchKeywords" :"Nails near me",
+      "id": 3,
+      "SearchKeywords": "Nails near me",
       "Clientname": "rohit@gmail.com",
-      "dateTime":"26 Dec 2023 , 9:000pm"
+      "dateTime": "26 Dec 2023 , 9:000pm"
     },
     {
-      "id" : 4,
-      "SearchKeywords" :"Nails near me",
+      "id": 4,
+      "SearchKeywords": "Nails near me",
       "Clientname": "tinku@gmail.com",
-      "dateTime":"26 Dec 2023 , 9:000pm"
+      "dateTime": "26 Dec 2023 , 9:000pm"
     }
   ]
 }

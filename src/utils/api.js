@@ -28,6 +28,15 @@ export const ServiceProviderAdmin = async () => {
     }
 }
 
+export const ServiceProviderAdminDelete = async (id) => {
+    try {
+        const response = await axiosInstance.delete(`/serviceProvider/${id}`)
+        return response.data
+    } catch (error) {
+        return error.response
+    }
+}
+
 export const RequstedAdminApi = async () => {
     try {
         const response = await axiosInstance.get("/requsted")

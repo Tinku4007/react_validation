@@ -1,6 +1,6 @@
 import { Box, Modal, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import { ServiceProviderAdmin } from '../../../utils/api';
+import { ServiceProviderAdmin, ServiceProviderAdminDelete } from '../../../utils/api';
 import deleteicon from '../../../assets/delete.png'
 import arrowicon from '../../../assets/arrow.png'
 import staricon from '../../../assets/start.png'
@@ -8,22 +8,13 @@ import eyesicon from '../../../assets/eyes.png'
 import SendEmailNotification from './SendEmailNotification'
 import { Link } from 'react-router-dom';
 import { OnboardedStore } from '../../../store/Store';
-
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 500,
-    bgcolor: 'background.paper',
-    boxShadow: 24,
-    p: 3,
-};
+import Confirmation from '../../../components/sheared/Confirmation';
 
 const Onboarded = () => {
-    const [openModal, setOpenModal] = useState(false);
     const [onboardDrawer, setOnboardDrawer] = useState(false)
     const onboardedUseStore = OnboardedStore();
+    
+    const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
 
     useEffect(() => {
         fetchData()
@@ -33,8 +24,17 @@ const Onboarded = () => {
         try {
             const response = await ServiceProviderAdmin()
             onboardedUseStore?.setonboardedUser(response)
+            console.log(console.log(onboardedUseStore?.setonboardedUser))
         } catch (error) {
             console.log(error, 'error service provider data fatching')
+        }
+    }
+
+    const handleConfirmation = async () => {
+        try {
+         const response = await ServiceProviderAdminDelete()
+        } catch (error) {
+            console.log(error, 'onboarding delete api eroor')
         }
     }
 
@@ -69,8 +69,8 @@ const Onboarded = () => {
                                         <div className='flex items-center gap-2'>
                                             <img className='w-4 cursor-pointer' onClick={() => setOnboardDrawer(true)} src={arrowicon} alt="arrow icon" />
                                             <img className='w-4 cursor-pointer' src={staricon} alt="star icon" />
-                                            <Link to={`/admin/Service-provider/${item?.id}`}>  <img className='w-4 cursor-pointer' src={eyesicon} alt="star icon" /></Link>
-                                            <img className='w-4 cursor-pointer' src={deleteicon} alt="delete icon" onClick={() => setOpenModal(true)} />
+                                            <Link to={`${item?.id}`}>  <img className='w-4 cursor-pointer' src={eyesicon} alt="star icon" /></Link>
+                                            <img className='w-4 cursor-pointer' src={deleteicon} alt="delete icon" onClick={() => setIsConfirmationModalOpen(true)} />
                                         </div>
                                     </TableCell>
                                 </TableRow>
@@ -78,23 +78,15 @@ const Onboarded = () => {
                         })}
                     </TableBody>
                 </Table>
-                <Modal open={openModal}
-                    onClose={() => setOpenModal(false)}
-                >
-                    <Box sx={style}>
-                        <div className='flex flex-col gap-5'>
-                            <div>
-                                <h4>Confirm Delete</h4>
-                                <p>Are you sure you want to delete Beauty Spot?</p>
-                            </div>
-                            <div className='flex items-center justify-end gap-2'>
-                                <button onClick={() => setOpenModal(false)} className='text-[#61373f] border border-[#61373f] rounded-lg w-20 h-[34px]'>Cancel</button>
-                                <button className='bg-[#61373f] text-white rounded-lg w-20 h-[34px]'>Ok</button>
-                            </div>
-                        </div>
-                    </Box>
-                </Modal>
                 <SendEmailNotification onboardDrawer={onboardDrawer} setOnboardDrawer={setOnboardDrawer} />
+                <Confirmation
+                    isOpen={isConfirmationModalOpen}
+                    onClose={() => setIsConfirmationModalOpen(false)}
+                    onConfirm={handleConfirmation}
+                    title='Confirm Delete'
+                    message="Are you sure you want to proceed?"
+                >
+                </Confirmation>
             </div>
         </>
     )
