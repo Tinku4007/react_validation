@@ -4,11 +4,14 @@ import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
 import { SearchListAdminApi } from '../../utils/api';
 import { CiSearch } from 'react-icons/ci';
 import deleteicon from '../../assets/delete.png'
+import Confirmation from '../../components/sheared/Confirmation';
 
 
 
 const SearchList = () => {
   const [searchlistData, setSearchlistData] = useState([])
+  const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
+  const [userId, setUserId] = useState();
 
   useEffect(() => {
     fetchSerachlist()
@@ -34,6 +37,22 @@ const SearchList = () => {
     )
     setSearchlistData(filteredClients)
   }
+
+  const modalOpen = (id) => {
+    setUserId(id)
+    setIsConfirmationModalOpen(true)
+  }
+
+  const handleConfirmation = async () => {
+    // try {
+    //   await ServiceProviderAdminDelete(userId)
+    //   setIsConfirmationModalOpen(false)
+    //   fetchData()
+    // } catch (error) {
+    //   console.log(error, 'onboarding delete api eroor')
+    // }
+  }
+
 
   return (
     <>
@@ -76,6 +95,14 @@ const SearchList = () => {
           </div>
         </div>
       </div>
+      <Confirmation
+        isOpen={isConfirmationModalOpen}
+        onClose={() => setIsConfirmationModalOpen(false)}
+        onConfirm={handleConfirmation}
+        title='Confirm Delete'
+        message="Are you sure you want to proceed?"
+      >
+      </Confirmation>
     </>
   )
 }

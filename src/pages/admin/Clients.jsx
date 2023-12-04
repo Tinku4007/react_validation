@@ -7,9 +7,13 @@ import { useState } from 'react';
 import { CiSearch } from 'react-icons/ci';
 import deleteicon from '../../assets/delete.png'
 import arrowicon from '../../assets/arrow.png'
+import Confirmation from '../../components/sheared/Confirmation';
 
 const Clients = () => {
   const [clientData, setClientDats] = useState([])
+  const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
+  const [userId, setUserId] = useState();
+
   useEffect(() => {
     fetchclient();
   }, [])
@@ -25,6 +29,11 @@ const Clients = () => {
     }
   }
 
+  const modalOpen = (id) => {
+    setUserId(id)
+    setIsConfirmationModalOpen(true)
+  }
+
   const handleSearch = (event) => {
     const searchData = event.target.value.toLowerCase();
     console.log(searchData)
@@ -37,6 +46,17 @@ const Clients = () => {
       setClientDats(filteredClients);
     }
   };
+
+  const handleConfirmation = async () => {
+    // try {
+    //   await ServiceProviderAdminDelete(userId)
+    //   setIsConfirmationModalOpen(false)
+    //   fetchData()
+    // } catch (error) {
+    //   console.log(error, 'onboarding delete api eroor')
+    // }
+  }
+
   return (
     <>
       <div className='w-[95%] mx-auto'>
@@ -73,7 +93,7 @@ const Clients = () => {
                       <TableCell component='td'>{item.status}</TableCell>
                       <TableCell component='td'>
                         <div className='flex items-center gap-2'>
-                        <img className='w-4' src={deleteicon} alt="delete icon" />
+                          <img className='w-4 cursor-pointer' src={deleteicon} alt="delete icon" onClick={() => modalOpen(item?.id)} />
                         </div>
                       </TableCell>
                     </TableRow>
@@ -84,6 +104,14 @@ const Clients = () => {
           </div>
         </div>
       </div>
+      <Confirmation
+        isOpen={isConfirmationModalOpen}
+        onClose={() => setIsConfirmationModalOpen(false)}
+        onConfirm={handleConfirmation}
+        title='Confirm Delete'
+        message="Are you sure you want to proceed?"
+      >
+      </Confirmation>
     </>
   )
 };
