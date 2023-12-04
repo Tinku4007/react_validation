@@ -3,6 +3,8 @@ import WithDashboardLayout from '../../hoc/WithDashboardLayout';
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
 import { SearchListAdminApi } from '../../utils/api';
 import { CiSearch } from 'react-icons/ci';
+import deleteicon from '../../assets/delete.png'
+
 
 
 const SearchList = () => {
@@ -63,7 +65,9 @@ const SearchList = () => {
                       <TableCell component='td'>{item.SearchKeywords}</TableCell>
                       <TableCell component='td'>{item.Clientname}</TableCell>
                       <TableCell component='td'>{item.dateTime}</TableCell>
-                      <TableCell component='td'>Delete</TableCell>
+                      <TableCell component='td'>
+                      <img className='w-4 cursor-pointer' src={deleteicon} alt="delete icon" onClick={() => modalOpen(item?.id)} />
+                      </TableCell>
                     </TableRow>
                   )
                 })}

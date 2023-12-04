@@ -64,7 +64,7 @@
     {
       "id": 1,
       "BusinessName": "New business provide",
-      "name": "ben",
+      "name": "newone",
       "Location": "Panchkula, Haryana, India",
       "TotalBookNowClicks": "1",
       "ProfileView": "6",
@@ -73,7 +73,7 @@
     {
       "id": 2,
       "BusinessName": "New business provide",
-      "name": "tinku",
+      "name": "newone",
       "Location": "Panchkula, Haryana, India",
       "TotalBookNowClicks": "1",
       "ProfileView": "6",
@@ -82,15 +82,6 @@
     {
       "id": 3,
       "BusinessName": "New business provide",
-      "name": "rahul",
-      "Location": "Panchkula, Haryana, India",
-      "TotalBookNowClicks": "1",
-      "ProfileView": "6",
-      "status": "Active"
-    },
-    {
-      "id": 4,
-      "BusinessName": "New business provide",
       "name": "newone",
       "Location": "Panchkula, Haryana, India",
       "TotalBookNowClicks": "1",
@@ -98,7 +89,7 @@
       "status": "Active"
     },
     {
-      "id": 5,
+      "id": 4,
       "BusinessName": "New business provide",
       "name": "newone",
       "Location": "Panchkula, Haryana, India",

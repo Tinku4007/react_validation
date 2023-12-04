@@ -1,6 +1,5 @@
 import { Box, Modal, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import { ServiceProviderAdmin, ServiceProviderAdminDelete } from '../../../utils/api';
 import deleteicon from '../../../assets/delete.png'
 import arrowicon from '../../../assets/arrow.png'
 import staricon from '../../../assets/start.png'
@@ -9,12 +8,13 @@ import SendEmailNotification from './SendEmailNotification'
 import { Link } from 'react-router-dom';
 import { OnboardedStore } from '../../../store/Store';
 import Confirmation from '../../../components/sheared/Confirmation';
+import { ServiceProviderAdmin, ServiceProviderAdminDelete } from '../../../utils/api'
 
 const Onboarded = () => {
     const [onboardDrawer, setOnboardDrawer] = useState(false)
     const onboardedUseStore = OnboardedStore();
-    
     const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
+    const [userId, setUserId] = useState();
 
     useEffect(() => {
         fetchData()
@@ -24,15 +24,21 @@ const Onboarded = () => {
         try {
             const response = await ServiceProviderAdmin()
             onboardedUseStore?.setonboardedUser(response)
-            console.log(console.log(onboardedUseStore?.setonboardedUser))
         } catch (error) {
             console.log(error, 'error service provider data fatching')
         }
     }
 
+    const modalOpen = (id) => {
+        setUserId(id)
+        setIsConfirmationModalOpen(true)
+    }
+
     const handleConfirmation = async () => {
         try {
-         const response = await ServiceProviderAdminDelete()
+            await ServiceProviderAdminDelete(userId)
+            setIsConfirmationModalOpen(false)
+            fetchData()
         } catch (error) {
             console.log(error, 'onboarding delete api eroor')
         }
@@ -70,7 +76,7 @@ const Onboarded = () => {
                                             <img className='w-4 cursor-pointer' onClick={() => setOnboardDrawer(true)} src={arrowicon} alt="arrow icon" />
                                             <img className='w-4 cursor-pointer' src={staricon} alt="star icon" />
                                             <Link to={`${item?.id}`}>  <img className='w-4 cursor-pointer' src={eyesicon} alt="star icon" /></Link>
-                                            <img className='w-4 cursor-pointer' src={deleteicon} alt="delete icon" onClick={() => setIsConfirmationModalOpen(true)} />
+                                            <img className='w-4 cursor-pointer' src={deleteicon} alt="delete icon" onClick={() => modalOpen(item?.id)} />
                                         </div>
                                     </TableCell>
                                 </TableRow>
