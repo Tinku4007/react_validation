@@ -38,7 +38,7 @@ const SendEmailNotification = ({ onboardDrawer, setOnboardDrawer }) => {
                     <textarea className="w-full outline-none text-[12px] text-input-placeholder resize-none" rows={9} type="text" id="message" />
                 </div>
                 <div className="mt-6 flex items-center justify-center gap-x-3">
-                    <span className=" bg-white flex-1 text-center text-primary-700 border border-[#ba8a8c] text-[10px] px-6 py-3 rounded-lg cursor-pointer" >Back</span>
+                    <span className=" bg-white flex-1 text-center text-primary-700 border border-[#ba8a8c] text-[10px] px-6 py-3 rounded-lg cursor-pointer" onClick={() => setOnboardDrawer(false)}>Back</span>
                     <button type="submit" className="flex-1 text-center bg-[#ba8a8c] border border-primary-700 text-white text-[10px] px-6 py-3 rounded-lg cursor-pointer flex items-center justify-center gap-x-2">Submit
                     </button>
                 </div>
