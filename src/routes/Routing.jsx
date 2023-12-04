@@ -10,6 +10,7 @@ import Review from '../pages/admin/Review';
 import SearchList from '../pages/admin/SearchList';
 import SupportTicket from '../pages/admin/SupportTicket';
 import ServiceProvider from '../pages/admin/serviceProvider/ServiceProvider';
+import ServiceProviderDetails from '../pages/admin/serviceProvider/ServiceProviderDetails';
 
 const Root = () => {
     const navigate = useNavigate();
@@ -38,7 +39,8 @@ const Routing = () => {
                     <Route path='clients' element={<Clients />} />
                     <Route path='Review' element={<Review />} />
                     <Route path='Search-List' element={<SearchList />} />
-                    <Route path='Service-provider' element={<ServiceProvider/>} />
+                    <Route path='Service-provider' element={<ServiceProvider />} />
+                    <Route path='Service-provider/:id' element={<ServiceProviderDetails />} />
                     <Route path='Support-ticket' element={<SupportTicket />} />
                 </Route>
             </Routes>

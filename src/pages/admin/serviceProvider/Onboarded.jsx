@@ -6,6 +6,8 @@ import arrowicon from '../../../assets/arrow.png'
 import staricon from '../../../assets/start.png'
 import eyesicon from '../../../assets/eyes.png'
 import SendEmailNotification from './SendEmailNotification'
+import { Link } from 'react-router-dom';
+import { OnboardedStore } from '../../../store/Store';
 
 const style = {
     position: 'absolute',
@@ -20,8 +22,8 @@ const style = {
 
 const Onboarded = () => {
     const [openModal, setOpenModal] = useState(false);
-    const [data, setData] = useState([])
     const [onboardDrawer, setOnboardDrawer] = useState(false)
+    const onboardedUseStore = OnboardedStore();
 
     useEffect(() => {
         fetchData()
@@ -30,12 +32,12 @@ const Onboarded = () => {
     const fetchData = async () => {
         try {
             const response = await ServiceProviderAdmin()
-            setData(response)
+            onboardedUseStore?.setonboardedUser(response)
         } catch (error) {
             console.log(error, 'error service provider data fatching')
         }
-
     }
+
     return (
         <>
             <div>
@@ -53,7 +55,7 @@ const Onboarded = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {data.map((item) => {
+                        {onboardedUseStore?.onboardedUser.map((item) => {
                             return (
                                 <TableRow key={item?.id}>
                                     <TableCell component='td'>{item.id}</TableCell>
@@ -67,7 +69,7 @@ const Onboarded = () => {
                                         <div className='flex items-center gap-2'>
                                             <img className='w-4 cursor-pointer' onClick={() => setOnboardDrawer(true)} src={arrowicon} alt="arrow icon" />
                                             <img className='w-4 cursor-pointer' src={staricon} alt="star icon" />
-                                            <img className='w-4 cursor-pointer' src={eyesicon} alt="star icon" />
+                                            <Link to={`/admin/Service-provider/${item?.id}`}>  <img className='w-4 cursor-pointer' src={eyesicon} alt="star icon" /></Link>
                                             <img className='w-4 cursor-pointer' src={deleteicon} alt="delete icon" onClick={() => setOpenModal(true)} />
                                         </div>
                                     </TableCell>

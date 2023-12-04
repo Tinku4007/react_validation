@@ -5,6 +5,12 @@ export const useStore = create((set) => ({
     toggle: () => set((state) => ({ sidebarService: !state.sidebarService }))
 }));
 
-export const ServiceProviderTab = create((set) => ({
-        ActiveTab : 0
+export const useUsersStore = create((set) => ({
+    onboarded: [],
+    setUsers: (data) => set(() => ({ onboarded: data }))
+}))
+
+export const OnboardedStore = create((set) => ({
+    onboardedUser: [],
+    setonboardedUser: (data) => set(() => ({ onboardedUser: data }))
 }))
