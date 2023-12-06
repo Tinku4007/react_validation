@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { RequstedAdminApi } from '../../../utils/api';
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
+import { useDispatch, useSelector } from 'react-redux';
+import { setrequstedDetails } from '../../../reduxStore/slices/serviceProviderSlice';
 
 const Requsted = () => {
-  const [requstedData, setRequstedData] = useState([]);
+  const dispatch = useDispatch();
+  const { requstedDetails } = useSelector(state => state.requsted);
 
   useEffect(() => {
     FetchData();
@@ -12,7 +15,7 @@ const Requsted = () => {
   const FetchData = async () => {
     try {
       const response = await RequstedAdminApi();
-      setRequstedData(response)
+      dispatch(setrequstedDetails(response))
     }
     catch (error) {
       console.log(error)
@@ -35,7 +38,7 @@ const Requsted = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {requstedData.map((item) => {
+            {requstedDetails && requstedDetails.map((item) => {
               return (
                 <TableRow key={item?.id}>
                   <TableCell component='td'>{item.id}</TableCell>

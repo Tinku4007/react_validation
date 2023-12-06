@@ -18,9 +18,14 @@ const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(profileValidation) });
 
   const onSubmit = async data => {
+    const fixData = {
+      appId: "123",
+      type: "web",
+    };
     const loginData = {
       email: data.email,
       password: data.password,
+      ...fixData
     }
     try {
       const resData = await LoginAdmin(loginData);
