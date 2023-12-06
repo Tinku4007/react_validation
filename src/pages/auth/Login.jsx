@@ -4,15 +4,18 @@ import { profileValidation } from '../../utils/validation/formValidation';
 import { useForm } from "react-hook-form";
 import WithAuthLayout from '../../hoc/WithAuthLayout';
 import { LoginAdmin } from '../../utils/api';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import PasswordHide from '../../assets/Password-hide.svg';
 import PasswordShow from '../../assets/Password-show.svg';
 import { setLocalStorage } from '../../utils/LocalStorageUtills';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../reduxStore/slices/userSlice';
 
 const Login = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [passwordVisible, setIsPasswordVisible] = useState(false);
-  const { register, handleSubmit, formState: { errors }, reset } = useForm({ resolver: yupResolver(profileValidation) });
+  const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(profileValidation) });
 
   const onSubmit = async data => {
     const loginData = {
@@ -21,8 +24,9 @@ const Login = () => {
     }
     try {
       const resData = await LoginAdmin(loginData);
-      setLocalStorage('loginData' , resData)
-      navigate('/admin/dashboard')
+      dispatch(setUser(resData));
+      setLocalStorage('admin', resData);
+      navigate('/admin/dashboard');
     } catch (error) {
       console.log('Login error:', error)
     }

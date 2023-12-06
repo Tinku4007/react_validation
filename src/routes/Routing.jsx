@@ -14,7 +14,7 @@ import ServiceProviderDetails from '../pages/admin/serviceProvider/ServiceProvid
 
 const Root = () => {
     const navigate = useNavigate();
-    const isAuthenicates = getLocalStorage('loginData')
+    const isAuthenicates = getLocalStorage('admin')
     useEffect(() => {
         if (isAuthenicates) {
             navigate('/admin/dashboard')

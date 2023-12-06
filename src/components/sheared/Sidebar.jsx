@@ -15,19 +15,19 @@ const Sidebar = () => {
             title: 'Dashboard', to: '/admin/dashboard', src: dashboard
         },
         {
-            title: 'Clients', to: '/admin/clients' , src: client
+            title: 'Clients', to: '/admin/clients', src: client
         },
         {
-            title: 'Service Providers', src: serviceProvider , to: '/admin/Service-provider'
+            title: 'Service Providers', src: serviceProvider, to: '/admin/Service-provider'
         },
         {
-            title: 'Review', src: review , to: '/admin/Review'
+            title: 'Review', src: review, to: '/admin/Review'
         },
         {
-            title: 'Support Ticket', src: supportticket , to: '/admin/Support-ticket'
+            title: 'Support Ticket', src: supportticket, to: '/admin/Support-ticket'
         },
         {
-            title: 'Search List', src: searchList , to: '/admin/Search-List'
+            title: 'Search List', src: searchList, to: '/admin/Search-List'
         },
     ]
     return (
@@ -46,7 +46,7 @@ const Sidebar = () => {
                             <span className='shape2' />
                             <p className="m-2 mr-0 py-4 px-3 text-xs text-[#906f76] font-medium link-nav rounded-s-full flex items-center">
                                 <img className="w-4 h-4 ml-1 mr-3" src={links.src} alt="" />
-                                {links.title}
+                                <span className={`${sidebarService ? 'hidden' : 'block'} `}> {links.title}</span>
                             </p>
                         </NavLink>
                     </li>

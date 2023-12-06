@@ -3,7 +3,7 @@ import { getLocalStorage } from '../utils/LocalStorageUtills'
 import { Navigate, Outlet } from 'react-router-dom'
 
 const AuthProteced = () => {
-    const admin = getLocalStorage('loginData')
+    const admin = getLocalStorage('admin')
   return (
     admin ? <Navigate to='/dashboard'/> : <Outlet/>
   )

@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import WithDashboardLayout from '../../../hoc/WithDashboardLayout';
 import Widgets from './Widgets';
 import Graph from './Graph';
 import Review from './Review';
 import MostServiceProvider from './MostServiceProvider';
-import { useStore } from '../../../store/Store';
+import { increment } from './../../../reduxStore/slices/counterSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Dashboard = () => {
-
+  const dispatch = useDispatch();
+  const { count } = useSelector(state => state.counter);
   return (
     <>
       <div className='w-[95%] mx-auto'>
@@ -23,6 +25,13 @@ const Dashboard = () => {
               <Review />
             </div>
           </div>
+        </div>
+
+        <div className='py-4 bg-red-500 text-white'>
+          <button onClick={() => dispatch(increment())} className='border px-2 py-1 border-white'>Increment</button>
+        </div>
+        <div>
+          <p>{count}</p>
         </div>
       </div>
     </>
