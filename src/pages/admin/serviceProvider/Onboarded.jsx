@@ -11,10 +11,11 @@ import Confirmation from '../../../components/sheared/Confirmation';
 import { ServiceProviderAdmin, ServiceProviderAdminDelete } from '../../../utils/api'
 
 const Onboarded = () => {
-    const [onboardDrawer, setOnboardDrawer] = useState(false)
-    const onboardedUseStore = OnboardedStore();
     const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
+    const [onboardeduserId, setonboardeduserId] = useState();
+    const [onboardDrawer, setOnboardDrawer] = useState(false)
     const [userId, setUserId] = useState();
+    const onboardedUseStore = OnboardedStore();
 
     useEffect(() => {
         fetchData()
@@ -42,6 +43,11 @@ const Onboarded = () => {
         } catch (error) {
             console.log(error, 'onboarding delete api eroor')
         }
+    }
+
+    const handleDrwaer = (data) => {
+        setonboardeduserId(data)
+        setOnboardDrawer(true)
     }
 
     return (
@@ -73,7 +79,7 @@ const Onboarded = () => {
                                     <TableCell component='td'>{item.status}</TableCell>
                                     <TableCell component='td'>
                                         <div className='flex items-center gap-2'>
-                                            <img className='w-4 cursor-pointer' onClick={() => setOnboardDrawer(true)} src={arrowicon} alt="arrow icon" />
+                                            <img className='w-4 cursor-pointer' onClick={()=>handleDrwaer(item)} src={arrowicon} alt="arrow icon" />
                                             <img className='w-4 cursor-pointer' src={staricon} alt="star icon" />
                                             <Link to={`${item?.id}`}>  <img className='w-4 cursor-pointer' src={eyesicon} alt="star icon" /></Link>
                                             <img className='w-4 cursor-pointer' src={deleteicon} alt="delete icon" onClick={() => modalOpen(item?.id)} />
@@ -84,7 +90,7 @@ const Onboarded = () => {
                         })}
                     </TableBody>
                 </Table>
-                <SendEmailNotification onboardDrawer={onboardDrawer} setOnboardDrawer={setOnboardDrawer} />
+                <SendEmailNotification userdetail={onboardeduserId} onboardDrawer={onboardDrawer} setOnboardDrawer={setOnboardDrawer} />
                 <Confirmation
                     isOpen={isConfirmationModalOpen}
                     onClose={() => setIsConfirmationModalOpen(false)}

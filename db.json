@@ -54,6 +54,13 @@
       "email": "admin@gmail.com",
       "password": "123456",
       "id": 12
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "1233",
+      "appId": "123",
+      "type": "web",
+      "id": 13
     }
   ],
   "Client": [
@@ -102,22 +109,54 @@
   ],
   "serviceProvider": [
     {
-      "id": 2,
-      "BusinessName": "New business provide",
-      "name": "newone",
-      "Location": "Panchkula, Haryana, India",
-      "TotalBookNowClicks": "1",
-      "ProfileView": "6",
-      "status": "Active"
-    },
-    {
-      "id": 3,
+      "id": 1,
       "BusinessName": "New business provide",
       "name": "tinku",
       "Location": "Panchkula, Haryana, India",
       "TotalBookNowClicks": "1",
       "ProfileView": "6",
-      "status": "Active"
+      "status": "Active",
+      "email" : "tinku@gmail.com"
+    },
+    {
+      "id": 2,
+      "BusinessName": "New business provide",
+      "name": "samar",
+      "Location": "Panchkula, Haryana, India",
+      "TotalBookNowClicks": "1",
+      "ProfileView": "6",
+      "status": "Active",
+      "email" : "tinku@gmail.com"
+    },
+    {
+      "id": 3,
+      "BusinessName": "New business provide",
+      "name": "Shambu",
+      "Location": "Panchkula, Haryana, India",
+      "TotalBookNowClicks": "1",
+      "ProfileView": "6",
+      "status": "block",
+      "email" : "tinku@gmail.com"
+    },
+    {
+      "id": 4,
+      "BusinessName": "New business provide",
+      "name": "gulshan",
+      "Location": "Panchkula, Haryana, India",
+      "TotalBookNowClicks": "1",
+      "ProfileView": "6",
+      "status": "Active",
+      "email" : "tinku@gmail.com"
+    },
+    {
+      "id": 5,
+      "BusinessName": "New business provide",
+      "name": "aashu",
+      "Location": "Panchkula, Haryana, India",
+      "TotalBookNowClicks": "1",
+      "ProfileView": "6",
+      "status": "pending",
+      "email" : "tinku@gmail.com"
     }
   ],
   "requsted": [

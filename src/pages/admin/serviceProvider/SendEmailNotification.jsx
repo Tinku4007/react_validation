@@ -1,7 +1,8 @@
 import { Drawer } from '@mui/material'
 import React from 'react'
 
-const SendEmailNotification = ({ onboardDrawer, setOnboardDrawer }) => {
+const SendEmailNotification = ({ userdetail, onboardDrawer, setOnboardDrawer }) => {
+
     return (
         <Drawer PaperProps={{ elevation: 0, style: { borderRadius: "60px 0 0 60px", width: "380px" } }} anchor='right' open={onboardDrawer} onClose={() => setOnboardDrawer(false)}>
             <div className='bg-[#fafafa] px-8 pt-8 border-b flex flex-col gap-5 pb-4'>
@@ -11,18 +12,18 @@ const SendEmailNotification = ({ onboardDrawer, setOnboardDrawer }) => {
                 <div className='flex justify-between'>
                     <div className='flex items-center gap-2'>
                         <img className='w-8 h-8 rounded-full' src="https://bcoder-dev-bucket.s3.amazonaws.com/beauty-spot/cec9a3052d36e38c86269d9545ff8f011dee5853.jpg" alt="" />
-                        <span className='text-sm font-medium'>Dior</span>
+                        <span className='text-sm font-medium'>{userdetail?.name}</span>
                     </div>
-                    <span>Active</span>
+                    <span>{userdetail?.status}</span>
                 </div>
                 <div className='flex flex-col gap-1'>
                     <div className='flex items-center gap-4'>
                         <p className='text-xs font-semibold'>Location:</p>
-                        <span className='text-xs font-medium text-[#9f9f9f]'>Northolt, London, UK</span>
+                        <span className='text-xs font-medium text-[#9f9f9f]'>{userdetail?.Location}</span>
                     </div>
                     <div className='flex items-center gap-4'>
                         <p className='text-xs font-semibold'>Email:</p>
-                        <span className='text-xs font-medium text-[#9f9f9f]'>teerenzel@gmail.com</span>
+                        <span className='text-xs font-medium text-[#9f9f9f]'>{userdetail?.email}</span>
                     </div>
                 </div>
             </div>
