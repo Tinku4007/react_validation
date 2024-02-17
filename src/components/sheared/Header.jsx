@@ -8,7 +8,7 @@ const Header = () => {
     const { user } = useSelector(state => state.auth);
 
     const handleLogoutClick = () => {
-        clearLocalStorage('admin');
+        localStorage.clear()
         navigate('/auth/login');
     }
     const handleBellClick = () => {

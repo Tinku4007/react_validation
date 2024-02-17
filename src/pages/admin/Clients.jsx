@@ -22,7 +22,7 @@ const Clients = () => {
     try {
       const response = await ClientAdmin()
       // if (response) {
-      setClientDats(response.data)
+      setClientDats(response)
       // }
     } catch (error) {
       console.log(error, 'client fatching data')
@@ -83,7 +83,7 @@ const Clients = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {clientData.map((item) => {
+                {clientData?.map((item) => {
                   return (
                     <TableRow key={item?.id}>
                       <TableCell component='td'>{item.id}</TableCell>

@@ -13,7 +13,7 @@ export const LoginAdmin = async (payload) => {
 export const ClientAdmin = async () => {
     try {
         const response = await axiosInstance.get("/Client")
-        return response
+        return response.data
     } catch (error) {
         return error.response
     }
@@ -60,6 +60,6 @@ export const SearchListAdminApi = async () => {
         const response = await axiosInstance.get('/searchList')
         return response.data
     } catch (error) {
-        return error.responseF
+        return error.response
     }
 }

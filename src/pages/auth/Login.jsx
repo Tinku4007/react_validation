@@ -18,20 +18,26 @@ const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(profileValidation) });
 
   const onSubmit = async data => {
-    const fixData = {
-      appId: "123",
-      type: "web",
-    };
+    let token = {
+      token:'tttttttttttttttttttttttttttttttttttttttttttttttttttttt'
+    }
     const loginData = {
       email: data.email,
       password: data.password,
-      ...fixData
+      ...token
     }
     try {
       const resData = await LoginAdmin(loginData);
-      dispatch(setUser(resData));
-      setLocalStorage('admin', resData);
-      navigate('/admin/dashboard');
+      console.log(resData, 'res data')
+      if (resData) {
+        dispatch(setUser(resData));
+        setLocalStorage('admin', resData);
+        setLocalStorage('token', resData.token);
+        // setAuthToken()
+        navigate('/admin/dashboard');
+      } else {
+        console.log('login faild')
+      }
     } catch (error) {
       console.log('Login error:', error)
     }
